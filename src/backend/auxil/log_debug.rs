@@ -40,8 +40,8 @@ macro_rules! debug {
 
 #[macro_export]
 macro_rules! trace {
-    ($(arg:tt)*) => {
-        log_debug!(::log::Level::Trace, $($arg)*)
+    ($($arg:tt)+) => {
+        log_debug!(::log::Level::Trace, $($arg)+)
     };
     (target: $target:expr, $($arg:tt)+) => {
         log_debug!(target: $target, $($arg)+)
