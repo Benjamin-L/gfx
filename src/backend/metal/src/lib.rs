@@ -7,7 +7,8 @@ extern crate foreign_types;
 #[macro_use]
 extern crate objc;
 extern crate core_graphics;
-#[macro_use]
+#[allow(unused_imports)]
+#[macro_use(log, info, warn, error)]
 extern crate log;
 extern crate block;
 extern crate parking_lot;
@@ -20,6 +21,9 @@ extern crate dispatch;
 #[cfg(feature = "winit")]
 extern crate winit;
 
+#[macro_use]
+#[path = "../../auxil/log_debug.rs"]
+mod log_debug;
 mod command;
 mod conversions;
 mod device;

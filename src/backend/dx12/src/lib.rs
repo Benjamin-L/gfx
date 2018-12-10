@@ -4,7 +4,8 @@ extern crate bitflags;
 extern crate derivative;
 extern crate d3d12 as native;
 extern crate gfx_hal as hal;
-#[macro_use]
+#[allow(unused_imports)]
+#[macro_use(log, info, warn, error)]
 extern crate log;
 extern crate smallvec;
 extern crate spirv_cross;
@@ -12,6 +13,9 @@ extern crate winapi;
 #[cfg(feature = "winit")]
 extern crate winit;
 
+#[macro_use]
+#[path = "../../auxil/log_debug.rs"]
+mod log_debug;
 mod command;
 mod conv;
 mod descriptors_cpu;

@@ -5,7 +5,8 @@ extern crate bitflags;
 #[macro_use]
 extern crate derivative;
 extern crate gfx_hal as hal;
-#[macro_use]
+#[allow(unused_imports)]
+#[macro_use(log, info, warn, error)]
 extern crate log;
 extern crate parking_lot;
 extern crate smallvec;
@@ -79,6 +80,9 @@ macro_rules! debug_marker {
     });
 }
 
+#[macro_use]
+#[path = "../../auxil/log_debug.rs"]
+mod log_debug;
 mod conv;
 #[cfg(debug_assertions)]
 mod debug;

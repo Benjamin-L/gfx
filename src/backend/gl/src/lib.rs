@@ -5,7 +5,7 @@
 
 #[macro_use]
 extern crate bitflags;
-#[macro_use]
+#[macro_use(log, info, warn, error)]
 extern crate log;
 extern crate gfx_gl as gl;
 extern crate gfx_hal as hal;
@@ -26,6 +26,9 @@ use hal::{error, image, pso};
 pub use self::device::Device;
 pub use self::info::{Info, PlatformName, Version};
 
+#[macro_use]
+#[path = "../../auxil/log_debug.rs"]
+mod log_debug;
 mod command;
 mod conv;
 mod device;

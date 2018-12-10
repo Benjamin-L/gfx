@@ -1,4 +1,5 @@
-#[macro_use]
+#[allow(unused_imports)]
+#[macro_use(log, info, warn, error)]
 extern crate log;
 #[macro_use]
 extern crate ash;
@@ -43,6 +44,9 @@ use ash::{EntryCustom, LoadingError};
 #[cfg(feature = "use-rtld-next")]
 use shared_library::dynamic_library::{DynamicLibrary, SpecialHandles};
 
+#[macro_use]
+#[path = "../../auxil/log_debug.rs"]
+mod log_debug;
 mod command;
 mod conv;
 mod device;
